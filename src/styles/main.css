@@ -80,6 +80,11 @@ body {
     margin: 10px auto;
     display: block;
     width: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
 }
 
 

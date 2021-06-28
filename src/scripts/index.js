@@ -4,24 +4,22 @@ import './../styles/main.css';
 import './../styles/responsive.css';
 import logo from './../public/images/logo.png';
 
+import App from './views/app';
+
 import data from './../DATA.json';
 
-const menu = document.querySelector('#menu');
-const hero = document.querySelector('.hero');
-const main = document.querySelector('main');
-const drawer = document.querySelector('#drawer');
-
-menu.addEventListener('click', function (event) {
-    drawer.classList.toggle('open');
-    event.stopPropagation();
+const app = new App({
+  button: document.querySelector('#menu'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('#maincontent'),
 });
 
-hero.addEventListener('click', function () {
-    drawer.classList.remove('open');
+window.addEventListener('hashchange', () => {
+  app.renderPage();
 });
 
-main.addEventListener('click', function () {
-    drawer.classList.remove('open');
+window.addEventListener('load', () => {
+  app.renderPage();
 });
 
 document.getElementById("header__inner").innerHTML +=`<img src='${logo}' class="logo"/>`;

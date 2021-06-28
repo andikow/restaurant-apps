@@ -3,7 +3,7 @@ const CONFIG = {
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: new Date().toISOString(),
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: 'restaurant',  
+  OBJECT_STORE_NAME: 'restaurant',
 };
 
 export default CONFIG;
