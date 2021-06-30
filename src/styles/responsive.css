@@ -68,6 +68,25 @@
     .post-item__description {
         font-size: 14px;
     }
+
+    .restaurants {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .restaurant {
+        grid-template-columns: auto 1fr;
+    }
+
+    .restaurant .restaurant__title {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .restaurant .restaurant__overview {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
 }
 
 @media screen and (min-width: 700px) {
@@ -83,6 +102,9 @@
     .nav__list {
         max-width: 800px;
         margin: 0 auto;
+    }
+    .restaurants {
+      grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -106,4 +128,13 @@
     main {
         max-width: 1200px;
     }
+    .restaurants {
+      grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+  .restaurants {
+      grid-template-columns: repeat(5, 1fr);
+  }
 }

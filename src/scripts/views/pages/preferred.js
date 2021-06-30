@@ -4,19 +4,16 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Preferred = {
   async render() {
     return `
-    <div class="content">
       <h2 class="content__heading">List Restaurants</h2>
-      <div id="restaurants" class="restaurants">
+      <div id="posts" class="posts">
 
       </div>
-    </div>
     `;
   },
 
   async afterRender() {
     let restaurants = await RestaurantsDBSource.preferredRestaurants();
-    console.log(restaurants);
-    const restaurantsContainer = document.querySelector('#restaurants');
+    const restaurantsContainer = document.querySelector('#posts');
        restaurants.forEach((restaurant) => {
         restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       });

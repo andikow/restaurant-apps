@@ -1,22 +1,28 @@
 import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <h2 class="movie__title">${restaurant.title}</h2>
-  <img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL + restaurant.poster_path}" alt="${restaurant.title}" />
-  <div class="movie__info">
+  <h2 class="restaurant__title">${restaurant.restaurant.name}</h2>
+  <img class="restaurant__poster" src="${CONFIG.PICTURE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
+  <div class="restaurant__info">
   <h3>Information</h3>
-    <h4>Tagline</h4>
-    <p>${restaurant.tagline}</p>
-    <h4>Release Date</h4>
-    <p>${restaurant.release_date}</p>
-    <h4>Duration</h4>
-    <p>${restaurant.runtime} minutes</p>
-    <h4>Rating</h4>
-    <p>${restaurant.vote_average}</p>
+    <h4>City</h4>
+    <p>${restaurant.restaurant.city}</p>
+    <h4>Address</h4>
+    <p>${restaurant.restaurant.address}</p>
+    <h4>Description</h4>
+    <p>${restaurant.restaurant.description} minutes</p>
   </div>
-  <div class="movie__overview">
-    <h3>Overview</h3>
-    <p>${restaurant.overview}</p>
+  <div id ="restaurant__menus" class="restaurant__menus">
+  <h4>Menus</h4>
+  <h5>Foods</h5>
+  <div id ="food__menus" class="food__menus"></div>
+  <h5>Drinks</h5>
+  <div id ="drink__menus" class="drink__menus"></div>
+
+  </div>
+  <div class="restaurant__overview">
+    <h3>Customer Reviews</h3>
+    <div id ="customer__reviews" class="customer__reviews"></div>
   </div>
 `;
 
@@ -24,7 +30,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     <article class="post-item">
       <div class="post-item__thumbnail">
         <img class="post-item__thumbnail"
-          src="${restaurant.pictureId}"
+          src="${CONFIG.PICTURE + restaurant.pictureId}"
           alt="Gambar restoran di kota ${restaurant.city}"
         />
         <div class="img-headline">
@@ -37,7 +43,7 @@ const createRestaurantItemTemplate = (restaurant) => `
         </p>
         <h1 class="post-item__title"><a href="#">${restaurant.name}</a></h1>
         <p class="post-item__description">${restaurant.description}</p>
-        <button class="readmore__button">Read More</button>
+        <button onclick="window.location.href='${`/#/detail/${restaurant.id}`}'" class="readmore__button">Read More</button>
       </div>
     </article>
   `;
