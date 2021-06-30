@@ -48,4 +48,21 @@ const createRestaurantItemTemplate = (restaurant) => `
     </article>
   `;
 
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate };
+const createSaveButtonTemplate = () => `
+    <button aria-label="save this restaurant" id="saveButton" class="save">
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+     </button>
+  `;
+
+const createSavedButtonTemplate = () => `
+    <button aria-label="remove this restaurant" id="saveButton" class="save">
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </button>
+  `;
+
+export {
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createSaveButtonTemplate,
+  createSavedButtonTemplate,
+};

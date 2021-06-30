@@ -1,11 +1,13 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantsDBSource from './../../data/restaurantsdb-source.js';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import SaveButtonInitiator from './../../utils/save-button-initiator.js';
 
 const Detail = {
   async render() {
     return `
       <div id="restaurant" class="restaurant"></div>
+      <div id="saveButtonContainer"></div>
     `;
   },
 
@@ -39,6 +41,14 @@ const Detail = {
      `;
     });
 
+    SaveButtonInitiator.init({
+          saveButtonContainer: document.querySelector('#saveButtonContainer'),
+          restaurant : {
+            id: restaurant.id,
+            title: restaurant.title,
+            description: restaurant.description,
+          },
+    });
   },
 };
 
