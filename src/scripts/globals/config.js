@@ -3,6 +3,7 @@ const CONFIG = {
   PICTURE: `https://restaurant-api.dicoding.dev/images/medium/`,
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: new Date().toISOString(),
+  DATABASE_NAME: 'restaurants-catalogue-db',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurant',
 };

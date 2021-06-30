@@ -32,9 +32,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new ServiceWorkerWebpackPlugin({
-     entry: path.resolve(__dirname, 'src/scripts/sw.js'),
-    }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -49,7 +46,11 @@ module.exports = {
       ],
     }),
     new FaviconsWebpackPlugin({
-        logo: path.resolve(__dirname, './src/public/images/logo.png'),
-    })
+      logo: path.resolve(__dirname, './src/public/images/logo.png'),
+    }),
+
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    }),
   ],
 };

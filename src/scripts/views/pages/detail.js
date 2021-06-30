@@ -13,7 +13,6 @@ const Detail = {
     // Fungsi ini akan dipanggil setelah render()
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantsDBSource.detailRestaurants(url.id);
-    console.log(restaurant.restaurant.menus.foods);
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
