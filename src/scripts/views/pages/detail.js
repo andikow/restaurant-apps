@@ -45,8 +45,6 @@ const Detail = {
       saveButtonContainer: document.querySelector('#saveButtonContainer'),
       restaurant: restaurant.restaurant,
     });
-
-    console.log(restaurant.restaurant);
   },
 };
 

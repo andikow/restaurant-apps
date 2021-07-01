@@ -18,7 +18,6 @@ const Saved = {
       restaurantsContainer.innerHTML +=
       createRestaurantItemTemplate(restaurant);
     });
-    console.log(restaurants);
   },
 };
 
