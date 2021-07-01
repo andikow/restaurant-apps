@@ -43,12 +43,10 @@ const Detail = {
 
     SaveButtonInitiator.init({
       saveButtonContainer: document.querySelector('#saveButtonContainer'),
-      restaurant: {
-        id: restaurant.id,
-        title: restaurant.title,
-        description: restaurant.description,
-      },
+      restaurant: restaurant.restaurant,
     });
+
+    console.log(restaurant.restaurant);
   },
 };
 
