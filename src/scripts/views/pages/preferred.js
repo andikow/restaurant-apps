@@ -1,5 +1,5 @@
 import RestaurantsDBSource from './../../data/restaurantsdb-source.js';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import {createRestaurantItemTemplate} from '../templates/template-creator';
 
 const Preferred = {
   async render() {
@@ -12,11 +12,12 @@ const Preferred = {
   },
 
   async afterRender() {
-    let restaurants = await RestaurantsDBSource.preferredRestaurants();
+    const restaurants = await RestaurantsDBSource.preferredRestaurants();
     const restaurantsContainer = document.querySelector('#posts');
-       restaurants.forEach((restaurant) => {
-        restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-      });
+    restaurants.forEach((restaurant) => {
+      restaurantsContainer.innerHTML +=
+      createRestaurantItemTemplate(restaurant);
+    });
     // Fungsi ini akan dipanggil setelah render()
   },
 };

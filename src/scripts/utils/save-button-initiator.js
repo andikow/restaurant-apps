@@ -1,8 +1,11 @@
 import SavedRestaurantIdb from './../data/savedrestaurant-idb.js';
-import { createSaveButtonTemplate, createSavedButtonTemplate } from '../views/templates/template-creator';
+import {
+  createSaveButtonTemplate,
+  createSavedButtonTemplate,
+} from '../views/templates/template-creator';
 
 const SaveButtonInitiator = {
-  async init({ saveButtonContainer, restaurant }) {
+  async init({saveButtonContainer, restaurant}) {
     this._saveButtonContainer = saveButtonContainer;
     this._restaurant = restaurant;
 
@@ -10,7 +13,7 @@ const SaveButtonInitiator = {
   },
 
   async _renderButton() {
-    const { id } = this._restaurant;
+    const {id} = this._restaurant;
 
     if (await this._isRestaurantExist(id)) {
       this._renderSaved();

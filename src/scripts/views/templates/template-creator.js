@@ -2,7 +2,10 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant__title">${restaurant.restaurant.name}</h2>
-  <img class="restaurant__poster" src="${CONFIG.PICTURE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
+  <img
+  class="restaurant__poster"
+  src="${CONFIG.PICTURE + restaurant.restaurant.pictureId}"
+  alt="${restaurant.restaurant.name}" />
   <div class="restaurant__info">
   <h3>Information</h3>
     <h4>City</h4>
@@ -39,11 +42,15 @@ const createRestaurantItemTemplate = (restaurant) => `
       </div>
       <div class="post-item__content">
         <p class="post-item__date">
-          Rating <a href="#" class="post-item__date__author">${restaurant.rating}</a>
+          Rating <a href="#" class="post-item__date__author">
+          ${restaurant.rating}</a>
         </p>
         <h1 class="post-item__title"><a href="#">${restaurant.name}</a></h1>
         <p class="post-item__description">${restaurant.description}</p>
-        <button onclick="window.location.href='${`/#/detail/${restaurant.id}`}'" class="readmore__button">Read More</button>
+        <button
+        onclick="window.location.href='${`/#/detail/${restaurant.id}`}'"
+        class="readmore__button">
+        Read More</button>
       </div>
     </article>
   `;
