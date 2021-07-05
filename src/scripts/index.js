@@ -22,4 +22,6 @@ window.addEventListener('load', () => {
   swRegister();
 });
 
-document.getElementById("header__inner").innerHTML +=`<img src='${logo}' class="logo"/>`;
+document.getElementById('header__inner').innerHTML +=`
+<img src='${logo}' class="logo"/>
+`;
