@@ -6,7 +6,6 @@ const Saved = {
     return `
     <h2 class="content__heading">Saved Restaurants</h2>
     <div id="posts" class="posts">
-
     </div>
     `;
   },
@@ -14,6 +13,12 @@ const Saved = {
   async afterRender() {
     const restaurants = await SavedRestaurantIdb.getAllRestaurant();
     const restaurantsContainer = document.querySelector('#posts');
+    if (restaurants.length == 0) {
+      restaurantsContainer.innerHTML += `
+      <h4 class="restaurant_not_found">No Saved Restaurant</h4>
+      `;
+    }
+    console.log(restaurants.length);
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML +=
       createRestaurantItemTemplate(restaurant);

@@ -1,7 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantsDBSource from './../../data/restaurantsdb-source.js';
 import {createRestaurantDetailTemplate} from '../templates/template-creator';
-import SaveButtonInitiator from './../../utils/save-button-initiator.js';
+import SaveButtonPresenter from './../../utils/save-button-initiator.js';
 
 const Detail = {
   async render() {
@@ -41,7 +41,7 @@ const Detail = {
      `;
     });
 
-    SaveButtonInitiator.init({
+    SaveButtonPresenter.init({
       saveButtonContainer: document.querySelector('#saveButtonContainer'),
       restaurant: restaurant.restaurant,
     });

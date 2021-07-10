@@ -4,7 +4,7 @@ import {
   createSavedButtonTemplate,
 } from '../views/templates/template-creator';
 
-const SaveButtonInitiator = {
+const SaveButtonPresenter = {
   async init({saveButtonContainer, restaurant}) {
     this._saveButtonContainer = saveButtonContainer;
     this._restaurant = restaurant;
@@ -32,7 +32,7 @@ const SaveButtonInitiator = {
 
     const saveButton = document.querySelector('#saveButton');
     saveButton.addEventListener('click', async () => {
-      await SavedRestaurantIdb.putMovie(this._restaurant);
+      await SavedRestaurantIdb.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
@@ -48,4 +48,4 @@ const SaveButtonInitiator = {
   },
 };
 
-export default SaveButtonInitiator;
+export default SaveButtonPresenter;

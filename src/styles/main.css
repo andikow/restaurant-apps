@@ -214,6 +214,10 @@ main {
   gap: 18px 16px;
 }
 
+.restaurant_not_found {
+  padding: 10px;
+}
+
 .restaurant .restaurant__poster {
   width: 100%;
   max-width: 400px;
