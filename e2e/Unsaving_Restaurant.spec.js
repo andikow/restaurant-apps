@@ -14,7 +14,7 @@ Scenario('unsaving a restaurant', async ({I}) => {
   I.amOnPage('/#/saved');
   I.seeElement('.post-item__content');
   const savedrestaurantName = await I.grabTextFrom('.post-item__title a');
-    assert.strictEqual(firstRestaurantName, savedrestaurantName);
+  assert.strictEqual(firstRestaurantName, savedrestaurantName);
   I.amOnPage('/#/saved');
   I.seeElement('.post-item__content');
   I.click(locate('.readmore__button').first());

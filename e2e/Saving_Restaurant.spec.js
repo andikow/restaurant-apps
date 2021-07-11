@@ -2,7 +2,7 @@ const assert = require('assert');
 
 Feature('Saving Restaurant');
 
-Scenario('showing empty saved restaurants',({I}) => {
+Scenario('showing empty saved restaurants', ({I}) => {
   I.amOnPage('/#/saved');
   I.seeElement('.restaurant_not_found');
   I.see('No Saved Restaurant', '.restaurant_not_found');
@@ -20,6 +20,5 @@ Scenario('saving a restaurant', async ({I}) => {
   I.amOnPage('/#/saved');
   I.seeElement('.post-item__content');
   const savedrestaurantName = await I.grabTextFrom('.post-item__title a');
-    assert.strictEqual(firstRestaurantName, savedrestaurantName);
-
+  assert.strictEqual(firstRestaurantName, savedrestaurantName);
 });

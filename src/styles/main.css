@@ -137,8 +137,13 @@ body {
     min-height: 380px;
     width: 100%;
     text-align: center;
-    background-image: url("./../public/images/heros/hero-image_4.jpg");
+    background-image: url("/images/heros/hero-image_4-large.png");
     background-position: center;
+}
+
+/* Gambar hero untuk development environment*/
+.hero {
+  background-image: url("./../public/images/heros/hero-image_4.jpg");
 }
 
 .hero__inner {
