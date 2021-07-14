@@ -34,7 +34,7 @@ const createRestaurantItemTemplate = (restaurant) => `
       <div class="post-item__thumbnail">
         <img class="post-item__thumbnail lazyload"
           src="${CONFIG.PICTURE + restaurant.pictureId}"
-          alt="Gambar restoran di kota ${restaurant.city}"
+          alt="restoran di kota ${restaurant.city}"
         />
         <div class="img-headline">
         Kota ${restaurant.city}

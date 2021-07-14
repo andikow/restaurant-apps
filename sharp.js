@@ -16,12 +16,12 @@ fs.readdirSync(target)
           .resize(800)
           .toFile(path.resolve(__dirname, `${destination}/${image.split('.')
               .slice(0, -1)
-              .join('.')}-large.png`));
+              .join('.')}-large.jpg`));
 
       // mengubah ukuran gambar dengan lebar 480px, dengan prefix -small.jpg
       sharp(`${target}/${image}`)
           .resize(480)
           .toFile(path.resolve(__dirname, `${destination}/${image.split('.')
               .slice(0, -1)
-              .join('.')}-small.png`));
+              .join('.')}-small.jpg`));
     });

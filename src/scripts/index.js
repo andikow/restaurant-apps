@@ -26,5 +26,5 @@ window.addEventListener('load', () => {
 });
 
 document.getElementById('header__inner').innerHTML +=`
-<img src='${logo}' class="logo"/>
+<img src='${logo}' alt="logo" class="logo"/>
 `;
